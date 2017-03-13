@@ -1,1 +1,1 @@
-# ProjectS
+# ProjectS - projekt na podstawy inzynierii oprogramowania.
