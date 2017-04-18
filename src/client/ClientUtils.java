@@ -49,6 +49,7 @@ public class ClientUtils {
     }
 
     /*
+
     public static void main( String []args ){
 
         String url = new String ("http://gdlp01.c-wss.com/gds/0/0300004720/02/eosrt3i-eos600d-im2-c-en.pdf");
