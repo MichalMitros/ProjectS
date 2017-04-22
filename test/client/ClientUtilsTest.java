@@ -1,11 +1,13 @@
 package client;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import sun.misc.IOUtils;
+
 
 import java.io.*;
-
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
@@ -14,22 +16,20 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 class ClientUtilsTest {
 
-
-    @BeforeEach
-    void setUp() {
-
-    }
-
     @AfterEach
     void tearDown() {
 
-        File tmpfile = new File( "./test/testFiles/client.downloadFromUrl.tmpFile.txt" );
+        File tmpfile;
+        tmpfile = new File( "./test/testFiles/client.downloadFromUrl.tmpFile.txt" );
         tmpfile.delete();
-
+        tmpfile = new File( "./test/testFiles/client.run.JarFile.tmpFile" );
+        tmpfile.delete();
+        tmpfile = new File( "./test/testFiles/tmpFile" );
+        tmpfile.delete();
     }
 
     @Test
-    void downloadFileFromUrlTest() {
+    synchronized void downloadFileFromUrlTest() {
 
         String urlString = new String ("http://websitetips.com/articles/copy/lorem/ipsum.txt");
         String dirPathString = new String ( "./test/testFiles");
@@ -79,6 +79,60 @@ class ClientUtilsTest {
         }
 
         return ;
+
+    }
+
+    @Test
+    synchronized void  runJarFileTestWithArgs() {
+
+        String []args = new String[1];
+        args[0] = "./test/testFiles/client.run.JarFile.tmpFile";
+        Process process;
+
+        try {
+            //Test program creates file on given path with.
+            process = ClientUtils.runJarFile("./test/testFiles/client.runJarFile.TestFile.jar", args);
+
+            try {
+                Thread.sleep(2000);
+            } catch( InterruptedException e ){
+                fail( e.getMessage() );
+            }
+
+            if( ( new File( "./test/testFiles/client.run.JarFile.tmpFile").exists() ) == false ){
+                fail( "Test program did not work properly!" );
+            }
+
+        } catch( IOException e ) {
+            fail( e.getMessage() );
+        }
+
+
+
+    }
+
+    @Test
+    synchronized void runJarFileTestWithoutArgs(){
+
+        Process process;
+
+        try {
+            //Test program creates file on given path with.
+            process = ClientUtils.runJarFile("./test/testFiles/client.runJarFile.TestFile.jar" );
+
+            try {
+                Thread.sleep(2000);
+            } catch( InterruptedException e ){
+                fail( e.getMessage() );
+            }
+
+            if( ( new File( "./test/testFiles/tmpFile").exists() ) == false ){
+                fail( "Test program did not work properly!" );
+            }
+
+        } catch( IOException e ) {
+            fail( e.getMessage() );
+        }
 
     }
 

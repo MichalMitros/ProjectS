@@ -10,62 +10,92 @@ import java.nio.file.FileAlreadyExistsException;
 
 public class ClientUtils {
 
-    public static void downloadFileFromUrl( String dirPathString , String fileNameString , String urlString )
-            throws IOException {
+    public static void downloadFileFromUrl(String dirPathString, String fileNameString, String urlString) throws IOException {
 
-        File dir = new File( dirPathString );
-        File file = new File( dirPathString + "/" + fileNameString );
+        File dir = new File(dirPathString);
+        File file = new File(dirPathString + "/" + fileNameString);
 
-        if( dir.exists() == false ){
-            throw new FileNotFoundException( "Directory not found!" );
+        if (dir.exists() == false) {
+            throw new FileNotFoundException("Directory not found!");
         }
 
-        if( file.exists() == true ) {
-            throw new FileAlreadyExistsException( "That file exists!" );
+        if (file.exists() == true) {
+            throw new FileAlreadyExistsException("That file exists!");
         }
 
         try {
             file.createNewFile();
-        } catch ( IOException e ) {
-            throw new IOException( "Cannot create that file!" );
+        } catch (IOException e) {
+            throw new IOException( e.getMessage() );
         }
 
         try {
-            URL url = new URL( urlString );
+            URL url = new URL(urlString);
             BufferedInputStream inStream = new BufferedInputStream(url.openStream());
-            FileOutputStream outStream = new FileOutputStream( file );
+            FileOutputStream outStream = new FileOutputStream(file);
             byte buf[] = new byte[2048];
-            int i = 0;
+            int i;
 
-            while( ( i = inStream.read( buf , 0 , 2048 ) ) != -1 ){
-                outStream.write( buf , 0 , i );
+            while ((i = inStream.read(buf, 0, 2048)) != -1) {
+                outStream.write(buf, 0, i);
             }
 
             outStream.close();
             inStream.close();
-        } catch ( IOException e ){
-            throw new IOException( "Cannot download a file!");
+        } catch (IOException e) {
+            throw new IOException( e.getMessage() );
         }
     }
 
-    /*
+    public static Process runJarFile( String PathString ) throws IOException {
 
-    public static void main( String []args ){
+        String []command;
+        ProcessBuilder processBuilder;
+        Process process;
 
-        String url = new String ("http://gdlp01.c-wss.com/gds/0/0300004720/02/eosrt3i-eos600d-im2-c-en.pdf");
-        String dir = new String ( "./test/");
-        String file = new String ( "file.pdf");
+        command = new String[ 3 ];
+        command[0] = "java";
+        command[1] = "-jar";
+        command[2] = PathString;
 
-        try {
-            downloadFileFromUrl( dir , file , url );
-        } catch ( IOException e ){
-            System.out.println( e.getMessage() );
+        processBuilder = new ProcessBuilder( command );
+
+        try{
+            process =  processBuilder.start();
+        } catch ( IOException e ) {
+            throw new IOException( e.getMessage() );
         }
 
-        return ;
+        return process;
 
     }
 
-    */
+    public static Process runJarFile( String PathString , String []args ) throws IOException {
+
+        String []command;
+        ProcessBuilder processBuilder;
+        Process process;
+
+        command = new String[ args.length + 3 ];
+        command[0] = "java";
+        command[1] = "-jar";
+        command[2] = PathString;
+
+        for( int i = 0 ; i < args.length ; i++ ){
+            command[i + 3] = args[ i ];
+        }
+
+        processBuilder = new ProcessBuilder( command );
+
+        try{
+            process =  processBuilder.start();
+        } catch ( IOException e ) {
+            throw new IOException( e.getMessage() );
+        }
+
+        return process;
+
+    }
 
 }
+
