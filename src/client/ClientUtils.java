@@ -10,17 +10,12 @@ import java.nio.file.FileAlreadyExistsException;
 
 public class ClientUtils {
 
-    public static void downloadFileFromUrl(String dirPathString, String fileNameString, String urlString) throws IOException {
+    private static File checkFilePath( String dirPathString , String fileNameString ) throws IOException{
 
-        File dir = new File(dirPathString);
-        File file = new File(dirPathString + "/" + fileNameString);
-
-        if (dir.exists() == false) {
-            throw new FileNotFoundException("Directory not found!");
-        }
+        File file = new File( dirPathString + "/" + fileNameString );
 
         if (file.exists() == true) {
-            throw new FileAlreadyExistsException("That file exists!");
+            throw new FileAlreadyExistsException( "That file exists!");
         }
 
         try {
@@ -28,6 +23,23 @@ public class ClientUtils {
         } catch (IOException e) {
             throw new IOException( e.getMessage() );
         }
+
+        if( file.exists() == false ){
+            throw new FileNotFoundException( "Cannot create a file!");
+        }
+
+        return file;
+    }
+
+    public static void downloadFileFromUrl( String filePathString, String urlString) throws IOException{
+
+        downloadFileFromUrl( "." , filePathString , urlString );
+
+    }
+
+    public static void downloadFileFromUrl(String dirPathString, String fileNameString, String urlString) throws IOException {
+
+        File file = checkFilePath( dirPathString , fileNameString );
 
         try {
             URL url = new URL(urlString);
@@ -45,47 +57,37 @@ public class ClientUtils {
         } catch (IOException e) {
             throw new IOException( e.getMessage() );
         }
+
     }
 
-    public static Process runJarFile( String PathString ) throws IOException {
+    public static Process runJarFile( String filePathString ) throws IOException {
 
-        String []command;
-        ProcessBuilder processBuilder;
-        Process process;
-
-        command = new String[ 3 ];
-        command[0] = "java";
-        command[1] = "-jar";
-        command[2] = PathString;
-
-        processBuilder = new ProcessBuilder( command );
-
-        try{
-            process =  processBuilder.start();
-        } catch ( IOException e ) {
-            throw new IOException( e.getMessage() );
-        }
-
+        Process process = runJarFile( filePathString  , new String[0] );
         return process;
 
     }
 
-    public static Process runJarFile( String PathString , String []args ) throws IOException {
+    public static Process runJarFile( String filePathString , String []args ) throws IOException {
 
         String []command;
-        ProcessBuilder processBuilder;
-        Process process;
 
         command = new String[ args.length + 3 ];
         command[0] = "java";
         command[1] = "-jar";
-        command[2] = PathString;
+        command[2] = filePathString;
 
         for( int i = 0 ; i < args.length ; i++ ){
             command[i + 3] = args[ i ];
         }
 
-        processBuilder = new ProcessBuilder( command );
+        return runFile( command );
+
+    }
+
+    private static Process runFile( String []command ) throws IOException{
+
+        ProcessBuilder processBuilder = new ProcessBuilder( command );
+        Process process;
 
         try{
             process =  processBuilder.start();

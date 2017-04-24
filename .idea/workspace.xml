@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc86f48-ae0c-4ffe-b42f-0cdb90271337" name="Default" comment="podstawy bota i ogolnie projekt w intellij zrobiony">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/testFiles/client.runJarFile.TestFile.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ClientUtils.java" afterPath="$PROJECT_DIR$/src/client/ClientUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/client/ClientUtilsTest.java" afterPath="$PROJECT_DIR$/test/client/ClientUtilsTest.java" />
@@ -25,8 +23,8 @@
       <file leaf-file-name="ClientUtilsTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+            <state relative-caret-position="255">
+              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,21 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientUtils.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            <state relative-caret-position="170">
+              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,9 +74,9 @@
         <option value="$PROJECT_DIR$/src/client/SlaveBot.java" />
         <option value="$PROJECT_DIR$/src/srcex/ClientUtils.java" />
         <option value="$PROJECT_DIR$/src/ClientUtils.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/client/ClientUtils.java" />
         <option value="$PROJECT_DIR$/test/client/ClientUtilsTest.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -119,6 +107,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,8 +219,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -248,10 +236,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="client" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
+    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -588,34 +576,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 34m 45s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 46m 57s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 34m 53s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 48m 13s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 35m 01s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 48m 40s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 35m 08s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 53m 50s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 38m 40s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 56m 42s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 39m 39s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 59m 02s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 39m 52s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 03m 01s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 40m 02s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 17m 13s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 40m 11s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 19m 13s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.23 at 00h 40m 30s.xml">
+    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 21m 02s.xml">
       <configuration name="ClientUtilsTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -635,7 +623,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40851736" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23659305" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -696,6 +684,34 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -799,31 +815,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

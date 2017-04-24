@@ -1,10 +1,7 @@
 package client;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sun.misc.IOUtils;
 
 
 import java.io.*;
@@ -28,23 +25,10 @@ class ClientUtilsTest {
         tmpfile.delete();
     }
 
-    @Test
-    synchronized void downloadFileFromUrlTest() {
 
-        String urlString = new String ("http://websitetips.com/articles/copy/lorem/ipsum.txt");
-        String dirPathString = new String ( "./test/testFiles");
-        String testfilePathString = new String ( "./test/testFiles/client.downloadFromUrl.testfile.txt");
-        String tmpfileNameString = new String ( "client.downloadFromUrl.tmpFile.txt");
-        File tmpfile = new File( dirPathString + "/" + tmpfileNameString );
-        File testfile = new File( testfilePathString );
+    synchronized void downloadFileFromUrlTestMain( File tmpfile , File testfile ) {
 
         try {
-            ClientUtils.downloadFileFromUrl( dirPathString , tmpfileNameString , urlString );
-        } catch ( IOException e ){
-            fail( e.getMessage() );
-        }
-
-          try {
 
             FileReader tmpFileReader = new FileReader( tmpfile );
             FileReader testFileReader = new FileReader( testfile );
@@ -83,6 +67,47 @@ class ClientUtilsTest {
     }
 
     @Test
+    void downloadFileFromUrlTestByDir() {
+
+        String urlString = new String ("http://websitetips.com/articles/copy/lorem/ipsum.txt");
+        String dirPathString = new String ( "./test/testFiles");
+        String testfilePathString = new String ( "./test/testFiles/client.downloadFromUrl.testfile.txt");
+        String tmpfileNameString = new String ( "client.downloadFromUrl.tmpFile.txt");
+
+        File tmpfile = new File( dirPathString + "/" + tmpfileNameString );
+        File testfile = new File( testfilePathString );
+
+        try {
+            ClientUtils.downloadFileFromUrl( dirPathString , tmpfileNameString , urlString );
+        } catch ( IOException e ){
+            fail( e.getMessage() );
+        }
+
+        downloadFileFromUrlTestMain( tmpfile , testfile );
+
+    }
+
+    @Test
+    void downloadFileFromUrlByPath() {
+
+        String urlString = new String ("http://websitetips.com/articles/copy/lorem/ipsum.txt");
+        String testfilePathString = new String ( "./test/testFiles/client.downloadFromUrl.testfile.txt");
+        String tmpfilePathString = new String ( "./test/testFiles/client.downloadFromUrl.tmpFile.txt");
+
+        File tmpfile = new File( tmpfilePathString );
+        File testfile = new File( testfilePathString );
+
+        try {
+            ClientUtils.downloadFileFromUrl( tmpfilePathString , urlString );
+        } catch ( IOException e ){
+            fail( e.getMessage() );
+        }
+
+        downloadFileFromUrlTestMain( tmpfile , testfile );
+
+    }
+
+    @Test
     synchronized void  runJarFileTestWithArgs() {
 
         String []args = new String[1];
@@ -90,7 +115,7 @@ class ClientUtilsTest {
         Process process;
 
         try {
-            //Test program creates file on given path with.
+            //Test program creates file on given path.
             process = ClientUtils.runJarFile("./test/testFiles/client.runJarFile.TestFile.jar", args);
 
             try {
@@ -117,7 +142,7 @@ class ClientUtilsTest {
         Process process;
 
         try {
-            //Test program creates file on given path with.
+            //Test program creates file on given path.
             process = ClientUtils.runJarFile("./test/testFiles/client.runJarFile.TestFile.jar" );
 
             try {
