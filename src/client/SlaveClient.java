@@ -17,7 +17,7 @@ public class SlaveClient {
 
         Bot bot1 = new Bot(server, nick, login, channel);
             bot1.connectToIRC();
-            bot1.testInOut();
+            bot1.waitAndExecuteAction();
 
     }
 }

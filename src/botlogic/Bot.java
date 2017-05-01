@@ -1,5 +1,7 @@
 package botlogic;
 
+import client.ActionFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -64,22 +66,15 @@ public class Bot {
         writer.flush( );
     }
 
-    public void testInOut() throws Exception
+    public void waitAndExecuteAction() throws Exception
     {
-        String line = null;
-        while ((line = this.reader.readLine( )) != null) {
-            if (line.contains("pong")) {
-                this.writer.write("PONG" + "\r\n");
-                this.writer.write("PRIVMSG " + channel + " pong od " + this.login + "\r\n");
-                this.writer.flush( );
-                System.out.println(line);
-            }
-            else {
-                System.out.println(line);
+        String line;
+        ActionFactory factory = new ActionFactory();
 
-            }
+        while((line = this.reader.readLine()) != null)
+        {
+                System.out.println(line);
         }
     }
-
 
 }
