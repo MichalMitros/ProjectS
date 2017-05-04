@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bcc86f48-ae0c-4ffe-b42f-0cdb90271337" name="Default" comment="ActionFactory - TestInOut (example for Action objects) &#10;for now add a specific &quot;constructor&quot; in Action interface - because of this inconvenience we should look for some better design pattern">
+    <list default="true" id="bcc86f48-ae0c-4ffe-b42f-0cdb90271337" name="Default" comment="ActionFactory - TestInOut (example for Action objects)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/botlogic/Bot.java" afterPath="$PROJECT_DIR$/src/botlogic/Bot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ActionFactory.java" afterPath="$PROJECT_DIR$/src/client/ActionFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/SlaveClient.java" afterPath="$PROJECT_DIR$/src/client/SlaveClient.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -808,8 +805,16 @@
       <workItem from="1493645195314" duration="1314000" />
       <workItem from="1493725507222" duration="1197000" />
       <workItem from="1493746987774" duration="111000" />
-      <workItem from="1493913104904" duration="5120000" />
+      <workItem from="1493913104904" duration="9300000" />
     </task>
+    <task id="LOCAL-00001" summary="ActionFactory - TestInOut (example for Action objects) &#10;for now add a specific &quot;constructor&quot; in Action interface - because of this inconvenience we should look for some better design pattern">
+      <created>1493918315162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1493918315162</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -845,7 +850,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10297000" />
+    <option name="totallyTimeSpent" value="14477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="744" extended-state="0" />
