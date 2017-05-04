@@ -1,5 +1,6 @@
 package botlogic;
 
+import client.Action;
 import client.ActionFactory;
 
 import java.io.BufferedReader;
@@ -13,16 +14,18 @@ import java.net.Socket;
  */
 
 public class Bot {
-    String server;
-    String nick;
-    String login;
+    private String server;
+    private String nick;
+    private String login;
 
-    String channel;
+    private String channel;
 
-    Socket socket;
+    private Socket socket;
 
-    BufferedReader reader;
-    BufferedWriter writer;
+    private BufferedReader reader;
+    private BufferedWriter writer;
+
+    private Action action;
 
 
 
@@ -50,7 +53,7 @@ public class Bot {
         writer.flush( );
 
         // zczytywanie linii, az zaloguje sie na serwer
-        String line = null;
+        String line;
         while ((line = this.reader.readLine( )) != null) {
             if (line.indexOf("004") >= 0) {
                 // We are now logged in.
@@ -66,15 +69,32 @@ public class Bot {
         writer.flush( );
     }
 
-    public void waitAndExecuteAction() throws Exception
+    public void waitAndValidateAction() throws Exception
     {
         String line;
         ActionFactory factory = new ActionFactory();
 
+        String command;
+        int argBeginning;
+
+
         while((line = this.reader.readLine()) != null)
         {
-                System.out.println(line);
+            //System.out.println(line);
+
+            argBeginning = line.lastIndexOf(":");
+            command = line.substring(argBeginning+1);
+            System.out.println(command);
+
+            action = factory.getAction(command);
+            if (action != null)
+                break;
         }
+    }
+    public void runCommand()
+    {
+        action.constructor(reader, writer, channel, login);
+        action.executeAction();
     }
 
 }
