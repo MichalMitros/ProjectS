@@ -4,9 +4,7 @@
     <list default="true" id="bcc86f48-ae0c-4ffe-b42f-0cdb90271337" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/botlogic/Bot.java" afterPath="$PROJECT_DIR$/src/botlogic/Bot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Action.java" afterPath="$PROJECT_DIR$/src/client/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/SlaveClient.java" afterPath="$PROJECT_DIR$/src/client/SlaveClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/TestInOutAction.java" afterPath="$PROJECT_DIR$/src/client/TestInOutAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ActionFactory.java" afterPath="$PROJECT_DIR$/src/client/ActionFactory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="ActionFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ActionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="156">
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -48,18 +46,18 @@
       <file leaf-file-name="SlaveClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/SlaveClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="48">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bot.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/botlogic/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1552">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="100" column="54" lean-forward="false" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#723#724#0" expanded="true" />
@@ -69,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestInOutAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestInOutAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/TestInOutAction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
@@ -115,11 +113,11 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/client/ClientUtils.java" />
         <option value="$PROJECT_DIR$/test/client/ClientUtilsTest.java" />
-        <option value="$PROJECT_DIR$/src/client/ActionFactory.java" />
         <option value="$PROJECT_DIR$/src/client/SlaveClient.java" />
-        <option value="$PROJECT_DIR$/src/botlogic/Bot.java" />
         <option value="$PROJECT_DIR$/src/client/Action.java" />
         <option value="$PROJECT_DIR$/src/client/TestInOutAction.java" />
+        <option value="$PROJECT_DIR$/src/botlogic/Bot.java" />
+        <option value="$PROJECT_DIR$/src/client/ActionFactory.java" />
       </list>
     </option>
   </component>
@@ -810,7 +808,7 @@
       <workItem from="1493645195314" duration="1314000" />
       <workItem from="1493725507222" duration="1197000" />
       <workItem from="1493746987774" duration="111000" />
-      <workItem from="1493913104904" duration="14112000" />
+      <workItem from="1493913104904" duration="14999000" />
     </task>
     <task id="LOCAL-00001" summary="ActionFactory - TestInOut (example for Action objects) &#10;for now add a specific &quot;constructor&quot; in Action interface - because of this inconvenience we should look for some better design pattern">
       <created>1493918315162</created>
@@ -826,7 +824,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493922521979</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Small refactoring">
+      <created>1493927393585</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1493927393585</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -862,7 +867,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19289000" />
+    <option name="totallyTimeSpent" value="20176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="744" extended-state="0" />
@@ -936,7 +941,8 @@
     <MESSAGE value="ActionFactory and some basic stuff" />
     <MESSAGE value="ActionFactory - TestInOut (example for Action objects) &#10;for now add a specific &quot;constructor&quot; in Action interface - because of this inconvenience we should look for some better design pattern" />
     <MESSAGE value="ActionFactory - TestInOut (example for Action objects)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ActionFactory - TestInOut (example for Action objects)" />
+    <MESSAGE value="Small refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1283,22 +1289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ActionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1307,23 +1297,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/SlaveClient.java">
+    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="-352">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/botlogic/Bot.java">
+    <entry file="file://$PROJECT_DIR$/src/client/ActionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1552">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="156">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/SlaveClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1334,6 +1328,18 @@
           <folding>
             <element signature="e#193#194#0" expanded="true" />
             <element signature="e#214#215#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/botlogic/Bot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="100" column="54" lean-forward="false" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
           </folding>
         </state>
       </provider>

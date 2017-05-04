@@ -86,6 +86,7 @@ public class Bot {
 
         String command;
         int argBeginning;
+        String[] commandWithArgs;
 
 
         while((line = receiveMessage()) != null)
@@ -94,9 +95,10 @@ public class Bot {
 
             argBeginning = line.lastIndexOf(":");
             command = line.substring(argBeginning+1);
+            commandWithArgs = command.split(" ");
             System.out.println(command);
 
-            action = factory.getAction(command);
+            action = factory.getAction(commandWithArgs);
             if (action != null)
                 break;
         }
