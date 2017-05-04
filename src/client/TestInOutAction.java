@@ -1,25 +1,18 @@
 package client;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import botlogic.Bot;
 
 /**
  * Created by kubehe on 30-04-2017.
  */
 public class TestInOutAction implements Action {
-	BufferedReader reader;
-	BufferedWriter writer;
 
-	String channel;
-	String login;
+    Bot bot;
 
 	@Override
-	public void constructor(BufferedReader reader, BufferedWriter writer, String channel, String login)
+	public void constructor(Bot bot)
 	{
-		this.reader = reader;
-		this.writer = writer;
-		this.channel = channel;
-		this.login = login;
+		this.bot = bot;
 	}
 
 	@Override
@@ -38,13 +31,12 @@ public class TestInOutAction implements Action {
 	private void testInOut() throws Exception
 	{
 		String line;
-		while ((line = this.reader.readLine()) != null)
+		while ((line = bot.receiveMessage()) != null)
 		{
 			if (line.contains("ping"))
 			{
-				this.writer.write("PONG" + "\r\n");
-				this.writer.write("PRIVMSG " + channel + " pong od " + this.login + "\r\n");
-				this.writer.flush();
+				bot.sendMessage(" pong od " + bot.getLogin() + "\r\n");
+
 				System.out.println(line);
 			}
 			else {

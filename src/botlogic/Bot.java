@@ -37,6 +37,10 @@ public class Bot {
         this.channel = ch;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
     public void connectToIRC() throws Exception
     {
         this.socket = new Socket(this.server, 6667);
@@ -54,7 +58,7 @@ public class Bot {
 
         // zczytywanie linii, az zaloguje sie na serwer
         String line;
-        while ((line = this.reader.readLine( )) != null) {
+        while ((line = receiveMessage()) != null) {
             if (line.indexOf("004") >= 0) {
                 // We are now logged in.
                 break;
@@ -69,6 +73,12 @@ public class Bot {
         writer.flush( );
     }
 
+    public void runAction()
+    {
+        action.constructor(this);
+        action.executeAction();
+    }
+
     public void waitAndValidateAction() throws Exception
     {
         String line;
@@ -78,7 +88,7 @@ public class Bot {
         int argBeginning;
 
 
-        while((line = this.reader.readLine()) != null)
+        while((line = receiveMessage()) != null)
         {
             //System.out.println(line);
 
@@ -91,10 +101,19 @@ public class Bot {
                 break;
         }
     }
-    public void runCommand()
+
+
+    public void sendMessage(String message) throws Exception
     {
-        action.constructor(reader, writer, channel, login);
-        action.executeAction();
+        writer.write("PRIVMSG " + channel + " :" + message);
+        writer.flush();
+    }
+
+    public String receiveMessage() throws Exception
+    {
+        String line;
+        line = this.reader.readLine();
+        return line;
     }
 
 }
