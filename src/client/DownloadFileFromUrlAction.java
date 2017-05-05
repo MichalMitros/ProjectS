@@ -11,12 +11,11 @@ import java.nio.file.FileAlreadyExistsException;
  */
 public class DownloadFileFromUrlAction implements Action {
 
-    File file;
-    URL url;
+    private File file;
+    private URL url;
 
     @Override
-    public void constructor(Bot bot)
-    {
+    public void constructor(Bot bot) {
 
         this.file = checkFilePath( dirPathString , fileNameString );
         this.url = new URL( urlString );
@@ -24,8 +23,7 @@ public class DownloadFileFromUrlAction implements Action {
     }
 
     @Override
-    public void executeAction()
-    {
+    public void executeAction() {
         try
         {
             downloadFileFromUrl();
