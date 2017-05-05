@@ -10,10 +10,6 @@ public class TestInOutAction implements Action {
     private Bot bot;
     private Boolean pingReceived = false;
 
-    private long start;
-	private long elapsedTime;
-	private long maxAllottedTime = 10*1000;
-
 	@Override
 	public void getBotObject(Bot bot)
 	{
@@ -41,7 +37,7 @@ public class TestInOutAction implements Action {
 			if (pingReceived == true)
 				bot.sendMessage(" pong od " + bot.getLogin());
 			else if (pingReceived == false)
-				bot.sendMessage(" no ping received in allotted time!");
+				bot.sendMessage(" no ping received!?!?");
 		}
 		catch(Exception e)
 		{
@@ -52,17 +48,13 @@ public class TestInOutAction implements Action {
 	private void testInOut() throws Exception
 	{
 		String line;
-		start = System.currentTimeMillis();
 
-		while ((line = bot.receiveMessage()) != null && (elapsedTime = System.currentTimeMillis()-start) < maxAllottedTime )
+		while ((line = bot.receiveMessage()) != null  )
 		{
 			if (line.contains("ping"))
 			{
 				pingReceived = true;
 				break;
-			}
-			else {
-				System.out.println(" elapsed time: " + elapsedTime);
 			}
 		}
 	}
