@@ -75,8 +75,9 @@ public class Bot {
 
     public void runAction()
     {
-        action.constructor(this);
+        action.getBotObject(this);
         action.executeAction();
+        action.sendInfo();
     }
 
     public void waitAndValidateAction() throws Exception
@@ -107,7 +108,7 @@ public class Bot {
 
     public void sendMessage(String message) throws Exception
     {
-        writer.write("PRIVMSG " + channel + " :" + message);
+        writer.write("PRIVMSG " + channel + " :" + message + "\r\n");
         writer.flush();
     }
 

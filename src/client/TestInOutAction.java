@@ -7,10 +7,15 @@ import botlogic.Bot;
  */
 public class TestInOutAction implements Action {
 
-    Bot bot;
+    private Bot bot;
+    private Boolean pingReceived = false;
+
+    private long start;
+	private long elapsedTime;
+	private long maxAllottedTime = 10*1000;
 
 	@Override
-	public void constructor(Bot bot)
+	public void getBotObject(Bot bot)
 	{
 		this.bot = bot;
 	}
@@ -28,19 +33,37 @@ public class TestInOutAction implements Action {
 		}
 	}
 
+	@Override
+	public void sendInfo()
+	{
+		try
+		{
+			if (pingReceived == true)
+				bot.sendMessage(" pong od " + bot.getLogin());
+			else if (pingReceived == false)
+				bot.sendMessage(" no ping received in allotted time!");
+		}
+		catch(Exception e)
+		{
+			e.getMessage();
+		}
+	}
+
 	private void testInOut() throws Exception
 	{
 		String line;
-		while ((line = bot.receiveMessage()) != null)
+		start = System.currentTimeMillis();
+
+		while ((line = bot.receiveMessage()) != null && (elapsedTime = System.currentTimeMillis()-start) < maxAllottedTime )
 		{
 			if (line.contains("ping"))
 			{
-				bot.sendMessage(" pong od " + bot.getLogin() + "\r\n");
-
+				pingReceived = true;
 				System.out.println(line);
+				break;
 			}
 			else {
-				System.out.println(line);
+				System.out.println(line + " | elapsed time: " + elapsedTime);
 			}
 		}
 	}

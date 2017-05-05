@@ -7,7 +7,8 @@ import botlogic.Bot;
  */
 
 public interface Action {
-    void constructor(Bot bot);
+    void getBotObject(Bot bot); // to send success/failure message to the server and in case some other function from Bot is required
     void executeAction();
+    void sendInfo();
 
 }
