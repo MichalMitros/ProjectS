@@ -59,11 +59,10 @@ public class TestInOutAction implements Action {
 			if (line.contains("ping"))
 			{
 				pingReceived = true;
-				System.out.println(line);
 				break;
 			}
 			else {
-				System.out.println(line + " | elapsed time: " + elapsedTime);
+				System.out.println(" elapsed time: " + elapsedTime);
 			}
 		}
 	}

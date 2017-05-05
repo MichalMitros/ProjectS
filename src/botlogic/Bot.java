@@ -26,6 +26,7 @@ public class Bot {
     private BufferedWriter writer;
 
     private Action action;
+    private String[] parsedCommandWithArgs;
 
 
 
@@ -85,24 +86,29 @@ public class Bot {
         String line;
         ActionFactory factory = new ActionFactory();
 
-        String command;
-        int argBeginning;
-        String[] commandWithArgs;
-
-
         while((line = receiveMessage()) != null)
         {
             //System.out.println(line);
+            parsedCommandWithArgs = parseReceivedCommand(line);
 
-            argBeginning = line.lastIndexOf(":");
-            command = line.substring(argBeginning+1);
-            commandWithArgs = command.split(" ");
-            System.out.println(command);
-
-            action = factory.getAction(commandWithArgs);
+            action = factory.getAction(parsedCommandWithArgs);
             if (action != null)
                 break;
         }
+    }
+
+    public String[] parseReceivedCommand(String line) throws Exception
+    {
+        String command;
+        String[] commandWithArgs;
+
+        int argBeginning = line.lastIndexOf(":");
+        command = line.substring(argBeginning+1);
+        commandWithArgs = command.split(" ");
+
+        System.out.println(command);
+
+        return commandWithArgs;
     }
 
 
@@ -115,8 +121,22 @@ public class Bot {
     public String receiveMessage() throws Exception
     {
         String line;
+
         line = this.reader.readLine();
+        System.out.println(line);
+
+        answerPingFromServer(line);
         return line;
+    }
+
+    public void answerPingFromServer(String line) throws Exception
+    {
+        String[] message = line.split(" ");
+
+        if(message[0].equals("PING"))
+        {
+            writer.write("PONG " + line.substring(5));
+        }
     }
 
 }
