@@ -22,8 +22,8 @@ public class Bot {
 
     private Socket socket;
 
-    private BufferedReader reader;
-    private BufferedWriter writer;
+    private static BufferedReader reader;
+    private static BufferedWriter writer;
 
     private Action action;
     private String[] parsedCommandWithArgs;
@@ -46,9 +46,9 @@ public class Bot {
     {
         this.socket = new Socket(this.server, 6667);
 
-        this.reader = new BufferedReader(
+        reader = new BufferedReader(
                 new InputStreamReader(socket.getInputStream()));
-        this.writer = new BufferedWriter(
+        writer = new BufferedWriter(
                 new OutputStreamWriter(socket.getOutputStream()));
 
 
@@ -74,11 +74,10 @@ public class Bot {
         writer.flush( );
     }
 
-    public void runAction()
+    public void runAction() throws Exception
     {
-        action.getBotObject(this);
         action.executeAction();
-        action.sendInfo();
+        sendMessage(action.sendInfo());
     }
 
     public void waitAndValidateAction() throws Exception
@@ -97,7 +96,7 @@ public class Bot {
         }
     }
 
-    public String[] parseReceivedCommand(String line) throws Exception
+    private String[] parseReceivedCommand(String line) throws Exception
     {
         String command;
         String[] commandWithArgs;
@@ -112,24 +111,24 @@ public class Bot {
     }
 
 
-    public void sendMessage(String message) throws Exception
+    private void sendMessage(String message) throws Exception
     {
         writer.write("PRIVMSG " + channel + " :" + message + "\r\n");
         writer.flush();
     }
 
-    public String receiveMessage() throws Exception
+    public static String receiveMessage() throws Exception
     {
         String line;
 
-        line = this.reader.readLine();
-        System.out.println("RECIVED: " + line);
+        line = reader.readLine();
+        System.out.println("RECEIVED: " + line);
 
         answerPingFromServer(line);
         return line;
     }
 
-    public void answerPingFromServer(String line) throws Exception
+    private static void answerPingFromServer(String line) throws Exception
     {
         String[] message = line.split(" ");
 
