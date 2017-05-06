@@ -26,6 +26,7 @@ public class Bot {
     private BufferedWriter writer;
 
     private Action action;
+    private String[] parsedCommandWithArgs;
 
 
 
@@ -75,8 +76,9 @@ public class Bot {
 
     public void runAction()
     {
-        action.constructor(this);
+        action.getBotObject(this);
         action.executeAction();
+        action.sendInfo();
     }
 
     public void waitAndValidateAction() throws Exception
@@ -84,38 +86,58 @@ public class Bot {
         String line;
         ActionFactory factory = new ActionFactory();
 
-        String command;
-        int argBeginning;
-        String[] commandWithArgs;
-
-
         while((line = receiveMessage()) != null)
         {
             //System.out.println(line);
+            parsedCommandWithArgs = parseReceivedCommand(line);
 
-            argBeginning = line.lastIndexOf(":");
-            command = line.substring(argBeginning+1);
-            commandWithArgs = command.split(" ");
-            System.out.println(command);
-
-            action = factory.getAction(commandWithArgs);
+            action = factory.getAction(parsedCommandWithArgs);
             if (action != null)
                 break;
         }
     }
 
+    public String[] parseReceivedCommand(String line) throws Exception
+    {
+        String command;
+        String[] commandWithArgs;
+
+        int argBeginning = line.lastIndexOf(":");
+        command = line.substring(argBeginning+1);
+        commandWithArgs = command.split(" ");
+
+        System.out.println("COMMAND: " + command);
+
+        return commandWithArgs;
+    }
+
 
     public void sendMessage(String message) throws Exception
     {
-        writer.write("PRIVMSG " + channel + " :" + message);
+        writer.write("PRIVMSG " + channel + " :" + message + "\r\n");
         writer.flush();
     }
 
     public String receiveMessage() throws Exception
     {
         String line;
+
         line = this.reader.readLine();
+        System.out.println("RECIVED: " + line);
+
+        answerPingFromServer(line);
         return line;
+    }
+
+    public void answerPingFromServer(String line) throws Exception
+    {
+        String[] message = line.split(" ");
+
+        if(message[0].equals("PING"))
+        {
+            writer.write("PONG " + line.substring(5));
+            System.out.println("PONG " + line.substring(5));
+        }
     }
 
 }

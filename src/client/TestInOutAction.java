@@ -7,10 +7,11 @@ import botlogic.Bot;
  */
 public class TestInOutAction implements Action {
 
-    Bot bot;
+    private Bot bot;
+    private Boolean pingReceived = false;
 
 	@Override
-	public void constructor(Bot bot)
+	public void getBotObject(Bot bot)
 	{
 		this.bot = bot;
 	}
@@ -28,19 +29,32 @@ public class TestInOutAction implements Action {
 		}
 	}
 
+	@Override
+	public void sendInfo()
+	{
+		try
+		{
+			if (pingReceived == true)
+				bot.sendMessage(" pong od " + bot.getLogin());
+			else if (pingReceived == false)
+				bot.sendMessage(" no ping received!?!?");
+		}
+		catch(Exception e)
+		{
+			e.getMessage();
+		}
+	}
+
 	private void testInOut() throws Exception
 	{
 		String line;
-		while ((line = bot.receiveMessage()) != null)
+
+		while ((line = bot.receiveMessage()) != null  )
 		{
 			if (line.contains("ping"))
 			{
-				bot.sendMessage(" pong od " + bot.getLogin() + "\r\n");
-
-				System.out.println(line);
-			}
-			else {
-				System.out.println(line);
+				pingReceived = true;
+				break;
 			}
 		}
 	}
