@@ -106,7 +106,7 @@ public class Bot {
         command = line.substring(argBeginning+1);
         commandWithArgs = command.split(" ");
 
-        System.out.println(command);
+        System.out.println("COMMAND: " + command);
 
         return commandWithArgs;
     }
@@ -123,7 +123,7 @@ public class Bot {
         String line;
 
         line = this.reader.readLine();
-        System.out.println(line);
+        System.out.println("RECIVED: " + line);
 
         answerPingFromServer(line);
         return line;

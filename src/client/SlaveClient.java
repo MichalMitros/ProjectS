@@ -35,7 +35,7 @@ public class SlaveClient {
     private static void setNickAndLogin(int randomNumber)
     {
         String number = Integer.toString(randomNumber);
-        System.out.println(number);
+        System.out.println("BOT_NO:" + number);
         nick = nick.concat(number);
         login = login.concat(number);
     }
