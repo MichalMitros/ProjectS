@@ -24,22 +24,23 @@ class RunJarFileActionTest {
     @Test
     void sendInfoTestConstructorNotJar(){
 
-        RunJarFileAction action = new RunJarFileAction();
+
         String []command = { "./test/testFiles/client.run.JarFile.tmpFile" };
 
-        action.constructor( command );
-        assertFalse( action.sendInfo().contains( "correctly" ));
+        RunJarFileAction action = new RunJarFileAction( command );
+
+        assertFalse( action.getInfo().contains( "correctly" ));
 
     }
 
     @Test
     void sendInfoTestConstructorCorrect(){
 
-        RunJarFileAction action = new RunJarFileAction();
-        String []command = { "./test/testFiles/client.runJarFile.TestFile.jar" };
+        String []command = { "./test/testFiles/client.runJarFile.tmpFile.jar" };
 
-        action.constructor( command );
-        assertTrue( action.sendInfo().contains( "correctly" ));
+        RunJarFileAction action = new RunJarFileAction( command );
+
+        assertTrue( action.getInfo().contains( "correctly" ));
 
     }
 
@@ -48,8 +49,7 @@ class RunJarFileActionTest {
 
         String []command =
                 { "./test/testFiles/client.runJarFile.TestFile.jar" , "./test/testFiles/client.run.JarFile.tmpFile" };
-        RunJarFileAction action = new RunJarFileAction();
-        action.constructor( command );
+        RunJarFileAction action = new RunJarFileAction( command );
 
         //Test program creates file on given path.
         action.executeAction();
@@ -61,7 +61,7 @@ class RunJarFileActionTest {
         }
 
         assertTrue( new File( "./test/testFiles/client.run.JarFile.tmpFile").exists() );
-        assertTrue( action.sendInfo().contains( "correctly" ));
+        assertTrue( action.getInfo().contains( "correctly" ));
 
     }
 

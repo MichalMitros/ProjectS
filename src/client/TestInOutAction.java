@@ -23,7 +23,7 @@ public class TestInOutAction implements Action {
 	}
 
 	@Override
-	public String sendInfo()
+	public String getInfo()
 	{
 		if (pingReceived)
 			return " pong od ";

@@ -10,16 +10,16 @@ public class DownloadFileFromUrlAction implements Action {
 
     private File file;
     private URL url;
-    private String serverMessage;
+    private String info;
 
-    public void constructor( String fileNameString , String dirPathString , String urlString ){
+    public DownloadFileFromUrlAction( String fileNameString , String dirPathString , String urlString ){
 
         try {
             this.file = checkFilePath(dirPathString, fileNameString);
             this.url = new URL(urlString);
-            serverMessage = "DownloadFileFromUrlAction constructed correctly.";
+            info = "DownloadFileFromUrlAction constructed correctly.";
         } catch (IOException e) {
-            serverMessage = e.getMessage();
+            info = e.getMessage();
         }
     }
 
@@ -28,18 +28,18 @@ public class DownloadFileFromUrlAction implements Action {
         try
         {
             downloadFileFromUrl();
-            serverMessage = "DownloadFileFromUrl executed correctly.";
+            info = "DownloadFileFromUrl executed correctly.";
         }
         catch (IOException e)
         {
-           serverMessage = e.getMessage();
+           info = e.getMessage();
         }
 
     }
 
     @Override
-    public String sendInfo() {
-        return serverMessage;
+    public String getInfo() {
+        return info;
     }
 
     private void downloadFileFromUrl() throws IOException {

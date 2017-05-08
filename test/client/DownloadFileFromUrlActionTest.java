@@ -27,10 +27,11 @@ class DownloadFileFromUrlActionTest {
     @Test
     void sendInfoTest() {
 
-        DownloadFileFromUrlAction action = new DownloadFileFromUrlAction();
-        action.constructor("client.downloadFromUrl.tmpFile.txt" ,"./test/testFiles" , "http://websitetips.com/articles/copy/lorem/ipsum.txt" );
-
-        assertTrue( action.sendInfo().contains( "correctly" ));
+        DownloadFileFromUrlAction action = new DownloadFileFromUrlAction(
+                "client.downloadFromUrl.tmpFile.txt" ,
+                "./test/testFiles" ,
+                "http://websitetips.com/articles/copy/lorem/ipsum.txt" );
+        assertTrue( action.getInfo().contains( "correctly" ));
 
     }
 
@@ -39,9 +40,11 @@ class DownloadFileFromUrlActionTest {
 
         System.out.println( "executeActionTest results depend on internet connection.");
 
-        DownloadFileFromUrlAction action = new DownloadFileFromUrlAction();
+        DownloadFileFromUrlAction action = new DownloadFileFromUrlAction(
+                "client.downloadFromUrl.tmpFile.txt" ,
+                "./test/testFiles" ,
+                "http://websitetips.com/articles/copy/lorem/ipsum.txt" );
 
-        action.constructor("client.downloadFromUrl.tmpFile.txt" ,"./test/testFiles" , "http://websitetips.com/articles/copy/lorem/ipsum.txt" );
         action.executeAction();
 
         File tmpfile = new File( "./test/testFiles/client.downloadFromUrl.tmpFile.txt" );
@@ -74,7 +77,7 @@ class DownloadFileFromUrlActionTest {
             fail( e.getMessage() );
         }
 
-        assertTrue( action.sendInfo().contains( "correctly" ) );
+        assertTrue( action.getInfo().contains( "correctly" ) );
 
     }
 

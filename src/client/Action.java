@@ -6,6 +6,6 @@ package client;
 
 public interface Action {
     void executeAction();
-    String sendInfo(); // to send info about Action to server
+    String getInfo(); // to send info about Action to server
 
 }

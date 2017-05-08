@@ -8,15 +8,15 @@ import java.io.IOException;
 public class RunJarFileAction implements Action {
 
     private String []command;
-    private String serverMessage;
+    private String info;
 
-    public void constructor( String []command ) {
+    public RunJarFileAction( String []command ) {
 
         try {
             setCommand(command);
-            serverMessage = "RunJarFileAction constructed correctly!";
+            info = "RunJarFileAction constructed correctly!";
         } catch ( IllegalArgumentException e ){
-            serverMessage = e.getMessage();
+            info = e.getMessage();
         }
     }
 
@@ -24,17 +24,17 @@ public class RunJarFileAction implements Action {
     public void executeAction() {
         try {
             runFile();
-            serverMessage = "RunJarFileAction executed correctly!";
+            info = "RunJarFileAction executed correctly!";
         }
         catch (IOException e)
         {
-            serverMessage = e.getMessage();
+            info = e.getMessage();
         }
     }
 
     @Override
-    public String sendInfo() {
-        return serverMessage;
+    public String getInfo() {
+        return info;
     }
 
     public void setCommand( String []command ) throws IllegalArgumentException {

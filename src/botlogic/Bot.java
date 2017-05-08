@@ -77,7 +77,7 @@ public class Bot {
     public void runAction() throws Exception
     {
         action.executeAction();
-        sendMessage(action.sendInfo());
+        sendMessage(action.getInfo());
     }
 
     public void waitAndValidateAction() throws Exception
