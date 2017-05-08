@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc86f48-ae0c-4ffe-b42f-0cdb90271337" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/client/RunJarFileActionTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/DownloadFileFromUrlAction.java" afterPath="$PROJECT_DIR$/src/client/DownloadFileFromUrlAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/RunJarFileAction.java" afterPath="$PROJECT_DIR$/src/client/RunJarFileAction.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,7 +36,7 @@
       <file leaf-file-name="ClientUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
+            <state relative-caret-position="546">
               <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
@@ -46,11 +46,20 @@
       <file leaf-file-name="DownloadFileFromUrlAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/DownloadFileFromUrlAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
+            <state relative-caret-position="986">
               <caret line="79" column="62" lean-forward="false" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientUtilsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1054">
+              <caret line="150" column="31" lean-forward="true" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
               <folding>
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1084#1085#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,11 +68,23 @@
       <file leaf-file-name="RunJarFileAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/RunJarFileAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
-                <element signature="e#692#693#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RunJarFileActionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/client/RunJarFileActionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-44">
+              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,10 +95,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
         <option value="UML Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -109,6 +130,7 @@
         <option value="$PROJECT_DIR$/src/botlogic/Bot.java" />
         <option value="$PROJECT_DIR$/src/client/Action.java" />
         <option value="$PROJECT_DIR$/src/client/DownloadFileFromUrlAction.java" />
+        <option value="$PROJECT_DIR$/test/client/RunJarFileActionTest.java" />
         <option value="$PROJECT_DIR$/src/client/RunJarFileAction.java" />
       </list>
     </option>
@@ -157,8 +179,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -192,6 +214,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testFiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,6 +325,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -300,10 +358,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="client" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
+    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -322,7 +380,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SlaveClient">
+  <component name="RunManager" selected="JUnit.RunJarFileActionTest">
     <configuration default="false" name="SlaveClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -402,6 +460,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="ProjectS" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RunJarFileActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ProjectS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="client" />
+      <option name="MAIN_CLASS_NAME" value="client.RunJarFileActionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -608,18 +692,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.SlaveClient" />
       <item index="1" class="java.lang.String" itemvalue="Application.ClientUtilsTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.ClientUtilsTest" />
       <item index="3" class="java.lang.String" itemvalue="Application.ClientUtils" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RunJarFileActionTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.SlaveClient" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ClientUtilsTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ClientUtilsTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.ClientUtils" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RunJarFileActionTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SlaveClient" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ClientUtilsTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ClientUtilsTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.ClientUtils" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -746,35 +832,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 46m 57s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 05m 14s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 48m 13s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 05m 59s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 48m 40s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 06m 08s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 53m 50s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 06m 16s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 56m 42s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 07m 14s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 20h 59m 02s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 14m 56s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 03m 01s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 16m 52s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 17m 13s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 17m 37s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 19m 13s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 18m 09s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientUtilsTest - 2017.04.24 at 21h 21m 02s.xml">
-      <configuration name="ClientUtilsTest" configurationId="JUnit" />
+    <history-entry file="RunJarFileActionTest - 2017.05.08 at 22h 18m 29s.xml">
+      <configuration name="RunJarFileActionTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -787,12 +873,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26120555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23493044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23343849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -811,7 +898,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26120555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -875,22 +961,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/TestInOutAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/SlaveClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1107,13 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -1161,6 +1224,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/DownloadFileFromUrlAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="79" column="62" lean-forward="false" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1169,32 +1248,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ClientUtils.java">
+    <entry file="file://$PROJECT_DIR$/../../CellSimJ/Cellular_Automaton_J/src/Boundary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/DownloadFileFromUrlAction.java">
+    <entry file="file://$PROJECT_DIR$/test/client/ClientUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="79" column="62" lean-forward="false" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
+        <state relative-caret-position="1054">
+          <caret line="150" column="31" lean-forward="true" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
           <folding>
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/client/RunJarFileActionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/RunJarFileAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
           </folding>
         </state>
       </provider>

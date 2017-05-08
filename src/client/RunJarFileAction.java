@@ -1,7 +1,5 @@
 package client;
 
-import botlogic.Bot;
-
 import java.io.IOException;
 
 /**
@@ -14,9 +12,12 @@ public class RunJarFileAction implements Action {
 
     public void constructor( String []command ) {
 
-        setCommand( command );
-        serverMessage = "RunJarFileAction constructed correctly!";
-
+        try {
+            setCommand(command);
+            serverMessage = "RunJarFileAction constructed correctly!";
+        } catch ( IllegalArgumentException e ){
+            serverMessage = e.getMessage();
+        }
     }
 
     @Override
@@ -36,7 +37,11 @@ public class RunJarFileAction implements Action {
         return serverMessage;
     }
 
-    public void setCommand( String []command ) {
+    public void setCommand( String []command ) throws IllegalArgumentException {
+
+        if( !command[0].endsWith( ".jar" ) ){
+            throw new IllegalArgumentException( "First argument not jarfile!" );
+        }
 
         this.command = new String[ command.length + 2 ];
         this.command[0] = "java";
