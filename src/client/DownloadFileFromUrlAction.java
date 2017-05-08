@@ -13,14 +13,16 @@ public class DownloadFileFromUrlAction implements Action {
 
     private File file;
     private URL url;
+    private String serverMessage;
 
-    public void constructor( String fileNameString , String dirPathString , String urlString ) throws IOException {
+    public void constructor( String fileNameString , String dirPathString , String urlString ){
 
         try {
             this.file = checkFilePath(dirPathString, fileNameString);
             this.url = new URL(urlString);
-        } catch( IOException e ) {
-            throw new IOException( e.getMessage() );
+            serverMessage = "DownloadFileFromUrlAction constructed correctly.";
+        } catch (IOException e) {
+            serverMessage = e.getMessage();
         }
     }
 
@@ -29,17 +31,18 @@ public class DownloadFileFromUrlAction implements Action {
         try
         {
             downloadFileFromUrl();
+            serverMessage = "DownloadFileFromUrl executed correctly.";
         }
         catch (IOException e)
         {
-           e.printStackTrace();
+           serverMessage = e.getMessage();
         }
 
     }
 
     @Override
     public String sendInfo() {
-        return null;
+        return serverMessage;
     }
 
     private void downloadFileFromUrl() throws IOException {
@@ -62,7 +65,8 @@ public class DownloadFileFromUrlAction implements Action {
 
     }
 
-    private static File checkFilePath( String dirPathString , String fileNameString ) throws IOException {
+    private static File checkFilePath( String dirPathString , String fileNameString )
+            throws IOException {
 
         File file = new File( dirPathString + "/" + fileNameString );
 
@@ -73,7 +77,7 @@ public class DownloadFileFromUrlAction implements Action {
         }
 
         if( file.exists() == false ){
-            throw new FileNotFoundException( "Cannot create a file!");
+            throw new FileNotFoundException( "File not created with unknown reason!");
         }
 
         return file;

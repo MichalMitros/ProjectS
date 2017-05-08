@@ -10,10 +10,12 @@ import java.io.IOException;
 public class RunJarFileAction implements Action {
 
     private String []command;
+    private String serverMessage;
 
     public void constructor( String []command ) {
 
         setCommand( command );
+        serverMessage = "RunJarFileAction constructed correctly!";
 
     }
 
@@ -21,16 +23,17 @@ public class RunJarFileAction implements Action {
     public void executeAction() {
         try {
             runFile();
+            serverMessage = "RunJarFileAction executed correctly!";
         }
         catch (IOException e)
         {
-            e.printStackTrace();
+            serverMessage = e.getMessage();
         }
     }
 
     @Override
     public String sendInfo() {
-        return null;
+        return serverMessage;
     }
 
     public void setCommand( String []command ) {
@@ -45,7 +48,7 @@ public class RunJarFileAction implements Action {
 
     }
 
-    private void runFile() throws IOException{
+    private void runFile() throws IOException {
 
         ProcessBuilder processBuilder = new ProcessBuilder( command );
 
