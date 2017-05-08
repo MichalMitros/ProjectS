@@ -1,10 +1,7 @@
 package client;
 
-import botlogic.Bot;
-
 import java.io.*;
 import java.net.URL;
-import java.nio.file.FileAlreadyExistsException;
 
 /**
  * Created by Patryk Cholewa on 05.05.2017.

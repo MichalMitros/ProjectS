@@ -4,12 +4,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Created by Patryk on 08.05.2017.
+ * Created by Patryk Cholewa on 08.05.2017.
  */
 class RunJarFileActionTest {
 

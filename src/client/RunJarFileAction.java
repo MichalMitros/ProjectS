@@ -3,7 +3,7 @@ package client;
 import java.io.IOException;
 
 /**
- * Created by Patryk on 05.05.2017.
+ * Created by Patryk Cholewa on 05.05.2017.
  */
 public class RunJarFileAction implements Action {
 
