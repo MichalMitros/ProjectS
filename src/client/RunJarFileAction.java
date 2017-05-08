@@ -11,8 +11,7 @@ public class RunJarFileAction implements Action {
 
     private String []command;
 
-    @Override
-    public void constructor(Bot bot) {
+    public void constructor( String []command ) {
 
         setCommand( command );
 
@@ -29,9 +28,14 @@ public class RunJarFileAction implements Action {
         }
     }
 
+    @Override
+    public String sendInfo() {
+        return null;
+    }
+
     public void setCommand( String []command ) {
 
-        this.command = new String[ command.length + 3 ];
+        this.command = new String[ command.length + 2 ];
         this.command[0] = "java";
         this.command[1] = "-jar";
 

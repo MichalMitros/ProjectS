@@ -14,12 +14,14 @@ public class DownloadFileFromUrlAction implements Action {
     private File file;
     private URL url;
 
-    @Override
-    public void constructor(Bot bot) {
+    public void constructor( String fileNameString , String dirPathString , String urlString ) throws IOException {
 
-        this.file = checkFilePath( dirPathString , fileNameString );
-        this.url = new URL( urlString );
-
+        try {
+            this.file = checkFilePath(dirPathString, fileNameString);
+            this.url = new URL(urlString);
+        } catch( IOException e ) {
+            throw new IOException( e.getMessage() );
+        }
     }
 
     @Override
@@ -30,9 +32,14 @@ public class DownloadFileFromUrlAction implements Action {
         }
         catch (IOException e)
         {
-            e.printStackTrace();
+           e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public String sendInfo() {
+        return null;
     }
 
     private void downloadFileFromUrl() throws IOException {
@@ -55,7 +62,7 @@ public class DownloadFileFromUrlAction implements Action {
 
     }
 
-    private static File checkFilePath( String dirPathString , String fileNameString ) throws IOException{
+    private static File checkFilePath( String dirPathString , String fileNameString ) throws IOException {
 
         File file = new File( dirPathString + "/" + fileNameString );
 
