@@ -1,20 +1,13 @@
 package client;
 
-import botlogic.Bot;
+import static botlogic.Bot.receiveMessage;
 
 /**
  * Created by kubehe on 30-04-2017.
  */
 public class TestInOutAction implements Action {
 
-    private Bot bot;
     private Boolean pingReceived = false;
-
-	@Override
-	public void getBotObject(Bot bot)
-	{
-		this.bot = bot;
-	}
 
 	@Override
 	public void executeAction()
@@ -30,26 +23,19 @@ public class TestInOutAction implements Action {
 	}
 
 	@Override
-	public void sendInfo()
+	public String sendInfo()
 	{
-		try
-		{
-			if (pingReceived == true)
-				bot.sendMessage(" pong od " + bot.getLogin());
-			else if (pingReceived == false)
-				bot.sendMessage(" no ping received!?!?");
-		}
-		catch(Exception e)
-		{
-			e.getMessage();
-		}
+		if (pingReceived)
+			return " pong od ";
+		else
+			return " no ping received!?!?";
 	}
 
 	private void testInOut() throws Exception
 	{
 		String line;
 
-		while ((line = bot.receiveMessage()) != null  )
+		while ((line = receiveMessage()) != null  )
 		{
 			if (line.contains("ping"))
 			{
