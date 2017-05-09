@@ -101,17 +101,21 @@ public class Bot {
         String command;
         String[] commandWithArgs;
 
-        int argBeginning = line.lastIndexOf(":");
-        command = line.substring(argBeginning+1);
-        commandWithArgs = command.split(" ");
+        int argBeginning = line.lastIndexOf(channel + " :");
+        if(argBeginning>0)
+        {
+            command = line.substring(argBeginning + channel.length() + 2);
+            commandWithArgs = command.split(" ");
 
-        System.out.println("COMMAND: " + command);
-
-        return commandWithArgs;
+            System.out.println("COMMAND: " + command);
+            return commandWithArgs;
+        }
+        else
+            return (commandWithArgs = null);
     }
 
 
-    private void sendMessage(String message) throws Exception
+    public void sendMessage(String message) throws Exception
     {
         writer.write("PRIVMSG " + channel + " :" + message + "\r\n");
         writer.flush();
