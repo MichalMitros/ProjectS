@@ -2,6 +2,7 @@ package client;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Path;
 
 /**
  * Created by Patryk Cholewa on 05.05.2017.
@@ -12,10 +13,10 @@ public class DownloadFileFromUrlAction implements Action {
     private URL url;
     private String info;
 
-    public DownloadFileFromUrlAction( String fileNameString , String dirPathString , String urlString ){
+    public DownloadFileFromUrlAction( String filePathString , String urlString ){
 
         try {
-            this.file = checkFilePath(dirPathString, fileNameString);
+            this.file = checkFilePath( filePathString );
             this.url = new URL(urlString);
             info = "DownloadFileFromUrlAction constructed correctly.";
         } catch (IOException e) {
@@ -62,10 +63,10 @@ public class DownloadFileFromUrlAction implements Action {
 
     }
 
-    private static File checkFilePath( String dirPathString , String fileNameString )
+    private static File checkFilePath( String filePathString )
             throws IOException {
 
-        File file = new File( dirPathString + "/" + fileNameString );
+        File file = new File( filePathString );
 
         try {
             file.createNewFile();
