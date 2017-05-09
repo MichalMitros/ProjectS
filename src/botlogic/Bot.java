@@ -101,13 +101,17 @@ public class Bot {
         String command;
         String[] commandWithArgs;
 
-        int argBeginning = line.lastIndexOf(":");
-        command = line.substring(argBeginning+1);
-        commandWithArgs = command.split(" ");
+        int argBeginning = line.lastIndexOf(channel + " :");
+        if(argBeginning>0)
+        {
+            command = line.substring(argBeginning + channel.length() + 2);
+            commandWithArgs = command.split(" ");
 
-        System.out.println("COMMAND: " + command);
-
-        return commandWithArgs;
+            System.out.println("COMMAND: " + command);
+            return commandWithArgs;
+        }
+        else
+            return (commandWithArgs = null);
     }
 
 

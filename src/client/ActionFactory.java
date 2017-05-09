@@ -17,6 +17,22 @@ public class ActionFactory {
         {
             return new TestInOutAction();
         }
+        else if(commandWithArgs[0].equalsIgnoreCase("DOWNLOADFILE"))
+        {
+            if(commandWithArgs.length == 4)
+                return new DownloadFileFromUrlAction(commandWithArgs[1], commandWithArgs[2], commandWithArgs[3]);
+        }
+        else if(commandWithArgs[0].equalsIgnoreCase("RUNJAR"))
+        {
+            if(commandWithArgs.length == 3)
+            {
+                String[] jarCommands = new String[commandWithArgs.length];
+                for (int i = 1; i < commandWithArgs.length; i++)
+                    jarCommands[i - 1] = commandWithArgs[i];
+
+                return new RunJarFileAction(jarCommands);
+            }
+        }
         return null;
     }
 }
