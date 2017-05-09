@@ -28,8 +28,7 @@ class DownloadFileFromUrlActionTest {
     void sendInfoTest() {
 
         DownloadFileFromUrlAction action = new DownloadFileFromUrlAction(
-                "client.downloadFromUrl.tmpFile.txt" ,
-                "./test/testFiles" ,
+                "./test/testFiles/client.downloadFromUrl.tmpFile.txt" ,
                 "http://websitetips.com/articles/copy/lorem/ipsum.txt" );
         assertTrue( action.getInfo().contains( "correctly" ));
 
@@ -41,8 +40,7 @@ class DownloadFileFromUrlActionTest {
         System.out.println( "executeActionTest results depend on internet connection.");
 
         DownloadFileFromUrlAction action = new DownloadFileFromUrlAction(
-                "client.downloadFromUrl.tmpFile.txt" ,
-                "./test/testFiles" ,
+                "./test/testFiles/client.downloadFromUrl.tmpFile.txt" ,
                 "http://websitetips.com/articles/copy/lorem/ipsum.txt" );
 
         action.executeAction();
