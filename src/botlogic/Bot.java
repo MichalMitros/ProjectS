@@ -115,7 +115,7 @@ public class Bot {
     }
 
 
-    private void sendMessage(String message) throws Exception
+    public void sendMessage(String message) throws Exception
     {
         writer.write("PRIVMSG " + channel + " :" + message + "\r\n");
         writer.flush();
