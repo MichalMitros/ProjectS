@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="mastergui.Gui">
-  <grid id="27dc6" binding="mainpanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="467"/>
@@ -8,15 +8,15 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="9712" binding="logpanel" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="9712" binding="logPanel" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="e3a62" class="javax.swing.JTextField" binding="commandField1">
+          <component id="e3a62" class="javax.swing.JTextField" binding="commandTextField1">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -26,12 +26,12 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="9b95a" class="javax.swing.JButton" binding="sendbutton1">
+          <component id="9b95a" class="javax.swing.JButton" binding="sendButton">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Wyślij"/>
+              <text value="Send"/>
             </properties>
           </component>
           <component id="87792" class="javax.swing.JLabel">
@@ -47,28 +47,32 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Polecenie"/>
+              <text value="Command"/>
             </properties>
           </component>
-          <component id="b2248" class="javax.swing.JTextArea" binding="logtextArea1">
+          <scrollpane id="8269b" binding="logScrollPane">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
+              <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="400" height="100"/>
               </grid>
             </constraints>
             <properties>
-              <text value=""/>
+              <horizontalScrollBarPolicy value="31"/>
+              <verticalScrollBarPolicy value="22"/>
             </properties>
-          </component>
-          <component id="e2326" class="javax.swing.JScrollBar" binding="logscrollBar1">
-            <constraints>
-              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
-          </component>
+            <border type="none"/>
+            <children>
+              <component id="b2248" class="javax.swing.JTextArea" binding="logTextArea1">
+                <constraints/>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
-      <grid id="a3ee1" binding="buttonpanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="a3ee1" binding="buttonPanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -78,28 +82,28 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="16dcc" class="javax.swing.JRadioButton" binding="testPołączeniaRadioButton" default-binding="true">
+          <component id="16dcc" class="javax.swing.JRadioButton" binding="connectiontestRadioButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Test połączenia"/>
+              <text value="Connection test"/>
             </properties>
           </component>
-          <component id="a1a8f" class="javax.swing.JRadioButton" binding="atak1RadioButton" default-binding="true">
+          <component id="a1a8f" class="javax.swing.JRadioButton" binding="runJarFileRadioButton" default-binding="true">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Atak#1"/>
+              <text value="Run Jar File"/>
             </properties>
           </component>
-          <component id="17c84" class="javax.swing.JRadioButton" binding="atak2RadioButton" default-binding="true">
+          <component id="17c84" class="javax.swing.JRadioButton" binding="downloadFileFromUrlRadioButton" default-binding="true">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Atak#2"/>
+              <text value="Download File from Url"/>
             </properties>
           </component>
           <component id="9fbed" class="javax.swing.JLabel">
@@ -107,33 +111,15 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Wybór działania"/>
+              <text value="Action"/>
             </properties>
           </component>
-          <component id="ba24d" class="javax.swing.JRadioButton" binding="atak3RadioButton" default-binding="true">
+          <component id="ba24d" class="javax.swing.JRadioButton" binding="userCommandRadioButton" default-binding="true">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Atak#3"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="6b0d2" binding="encryption" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="a2de1" class="javax.swing.JRadioButton" binding="szyfrowanieRadioButton" default-binding="true">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Szyfrowanie"/>
+              <text value="User Command"/>
             </properties>
           </component>
         </children>
@@ -145,7 +131,16 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="a2de1" class="javax.swing.JRadioButton" binding="encryptionRadioButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Encryption"/>
+            </properties>
+          </component>
+        </children>
       </grid>
     </children>
   </grid>
