@@ -132,6 +132,18 @@ public class Bot {
         return line;
     }
 
+    public static String receiveMessageForMastergui() throws Exception
+    {
+        String line;
+        if (reader.ready()) {
+            line = reader.readLine();
+            return line;
+        }
+        else {
+            return null;
+        }
+    }
+
     private static void answerPingFromServer(String line) throws Exception
     {
         String[] message = line.split(" ");

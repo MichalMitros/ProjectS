@@ -38,11 +38,14 @@ public class Gui {
         masterbot = new Bot(server, nick, login, channel);
         masterbot.connectToIRC();
         logTextArea1.setEditable(false);
-        Timer timer = new Timer(1000, new ActionListener() {
+        Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    logTextArea1.append(masterbot.receiveMessage() + "\n");
+                    String line = masterbot.receiveMessageForMastergui();
+                    if (!(line.isEmpty())) {
+                        logTextArea1.append(line + "\n");
+                    }
                 } catch (java.lang.Exception exc) {
                 }
             }
@@ -105,7 +108,7 @@ public class Gui {
 
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("Gui");
-        frame.setSize(600, 400);
+        frame.setSize(800, 400);
         frame.setLocationByPlatform(true);
         frame.setTitle("BotNetIRC - Master");
         frame.setContentPane(new Gui().mainPanel);
