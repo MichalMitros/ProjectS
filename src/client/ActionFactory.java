@@ -19,8 +19,8 @@ public class ActionFactory {
         }
         else if(commandWithArgs[0].equalsIgnoreCase("DOWNLOADFILE"))
         {
-            if(commandWithArgs.length == 4)
-                return new DownloadFileFromUrlAction(commandWithArgs[1], commandWithArgs[2], commandWithArgs[3]);
+            if(commandWithArgs.length == 3)
+                return new DownloadFileFromUrlAction(commandWithArgs[1], commandWithArgs[2]);
         }
         else if(commandWithArgs[0].equalsIgnoreCase("RUNJAR"))
         {

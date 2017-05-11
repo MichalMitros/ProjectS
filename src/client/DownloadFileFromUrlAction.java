@@ -18,7 +18,7 @@ public class DownloadFileFromUrlAction implements Action {
         try {
             this.file = checkFilePath( filePathString );
             this.url = new URL(urlString);
-            info = "DownloadFileFromUrlAction constructed correctly.";
+            this.info = "DownloadFileFromUrlAction constructed correctly.";
         } catch (IOException e) {
             info = e.getMessage();
         }
