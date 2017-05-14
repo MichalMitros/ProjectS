@@ -150,7 +150,8 @@ public class Bot {
 
         if(message[0].equals("PING"))
         {
-            writer.write("PONG " + line.substring(5));
+            writer.write("PONG " + line.substring(5) +"\r\n");
+            writer.flush();
             System.out.println("PONG " + line.substring(5));
         }
     }
