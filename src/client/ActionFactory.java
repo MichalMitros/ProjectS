@@ -33,6 +33,10 @@ public class ActionFactory {
                 return new RunJarFileAction(jarCommands);
             }
         }
+        else if(commandWithArgs[0].equalsIgnoreCase("DIE"))
+        {
+            System.exit(0);
+        }
         return null;
     }
 }
