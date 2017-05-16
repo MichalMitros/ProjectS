@@ -117,5 +117,6 @@ public class Gui {
         frame.setContentPane(new Gui().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
     }
 }

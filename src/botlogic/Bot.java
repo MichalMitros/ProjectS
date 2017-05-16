@@ -140,7 +140,7 @@ public class Bot {
         return line;
     }
 
-    private static void answerPingFromServer(String line) throws Exception
+    public static void answerPingFromServer(String line) throws Exception
     {
         String[] message = line.split(" ");
 

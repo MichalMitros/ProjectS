@@ -17,6 +17,7 @@ public class Master extends Bot {
         String line;
         if (super.getReader().ready()) {
             line = super.getReader().readLine();
+            super.answerPingFromServer(line);
             if (cleanMsg) {
                 int argBeginning = line.lastIndexOf(super.getChannel() + " :");
                 int nameEnding = line.indexOf('!');
