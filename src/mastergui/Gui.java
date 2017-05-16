@@ -1,7 +1,5 @@
 package mastergui;
 
-import botlogic.Bot;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +16,7 @@ public class Gui {
     private static String log;
 
 
-    private Bot masterbot;
+    private Master masterbot;
     private JPanel mainPanel;
     private JTextField commandTextField1;
     private JButton sendButton;
@@ -35,7 +33,7 @@ public class Gui {
 
     public Gui() throws Exception {
         setNickAndLogin(getRandomNumber());
-        masterbot = new Bot(server, nick, login, channel);
+        masterbot = new Master(server, nick, login, channel);
         masterbot.connectToIRC();
         logTextArea1.setEditable(false);
         Timer timer = new Timer(100, new ActionListener() {

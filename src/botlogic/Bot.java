@@ -96,6 +96,10 @@ public class Bot {
         }
     }
 
+    public BufferedReader getReader() {
+        return reader;
+    }
+
     private String[] parseReceivedCommand(String line) throws Exception
     {
         String command;
@@ -130,18 +134,6 @@ public class Bot {
 
         answerPingFromServer(line);
         return line;
-    }
-
-    public static String receiveMessageForMastergui() throws Exception
-    {
-        String line;
-        if (reader.ready()) {
-            line = reader.readLine();
-            return line;
-        }
-        else {
-            return null;
-        }
     }
 
     private static void answerPingFromServer(String line) throws Exception
