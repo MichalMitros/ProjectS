@@ -27,8 +27,15 @@ public class SlaveClient {
             bot1.connectToIRC();
 
             while (true) {
-                bot1.waitAndValidateAction();
-                bot1.runAction();
+                try
+                {
+                    bot1.waitAndValidateAction();
+                    bot1.runAction();
+                }
+                catch (Exception e)
+                {
+                    bot1.sendMessage(e.getMessage());
+                }
             }
         }
     }
