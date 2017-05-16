@@ -70,9 +70,17 @@
               </component>
             </children>
           </scrollpane>
+          <component id="834fa" class="javax.swing.JCheckBox" binding="cleanchatCheckBox" default-binding="true">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Cleanchat"/>
+            </properties>
+          </component>
         </children>
       </grid>
-      <grid id="a3ee1" binding="buttonPanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="a3ee1" binding="buttonPanel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="5" left="5" bottom="5" right="5"/>
         <constraints>
           <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -110,7 +118,7 @@
           </component>
           <component id="ba24d" class="javax.swing.JRadioButton" binding="userCommandRadioButton" default-binding="true">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="User Command"/>
@@ -122,6 +130,14 @@
             </constraints>
             <properties>
               <text value="Action"/>
+            </properties>
+          </component>
+          <component id="8f56b" class="javax.swing.JRadioButton" binding="killBotRadioButton">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Kill bot"/>
             </properties>
           </component>
         </children>
@@ -147,11 +163,12 @@
     </children>
   </grid>
   <buttonGroups>
-    <group name="wybórbuttonGroup1">
+    <group name="buttonGroup1">
       <member id="16dcc"/>
       <member id="a1a8f"/>
       <member id="17c84"/>
       <member id="ba24d"/>
+      <member id="8f56b"/>
     </group>
   </buttonGroups>
 </form>

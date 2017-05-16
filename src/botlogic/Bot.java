@@ -100,6 +100,10 @@ public class Bot {
         return reader;
     }
 
+    public String getChannel() {
+        return channel;
+    }
+
     private String[] parseReceivedCommand(String line) throws Exception
     {
         String command;
