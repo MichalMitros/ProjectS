@@ -15,18 +15,31 @@ public class SlaveClient {
 
     private static String channel = "#channel";
 
+    private static Bot bot1;
+
+    private static boolean socketOpen;
 
     public static void main(String[] args) throws Exception {
 
-
-        setNickAndLogin(getRandomNumber(), getSystemName());
-        Bot bot1 = new Bot(server, nick, login, channel);
-
         while(true)
         {
-            bot1.connectToIRC();
+            try
+            {
+                setNickAndLogin(getRandomNumber(), getSystemName());
+                bot1 = new Bot(server, nick, login, channel);
 
-            while (true) {
+                bot1.connectToIRC();
+                socketOpen = true;
+            }
+            catch (Exception e)
+            {
+                bot1.sendMessage(e.getMessage());
+                bot1.closeConnection();
+                socketOpen = false;
+            }
+
+            while (socketOpen)
+            {
                 try
                 {
                     bot1.waitAndValidateAction();

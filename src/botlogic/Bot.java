@@ -38,8 +38,16 @@ public class Bot {
         this.channel = ch;
     }
 
-    public String getLogin() {
-        return login;
+    public void closeConnection()
+    {
+        try
+        {
+            socket.close();
+        }
+        catch (Exception e)
+        {
+            e.getSuppressed();
+        }
     }
 
     public void connectToIRC() throws Exception
@@ -118,8 +126,7 @@ public class Bot {
             System.out.println("COMMAND: " + command);
             return commandWithArgs;
         }
-        else
-            return (commandWithArgs = null);
+        return null;
     }
 
 
