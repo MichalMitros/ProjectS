@@ -15,33 +15,32 @@ public class Gui {
     private static String nick = "masterGui";
     private static String login = "masterGui";
     private static String channel = "#channel";
-    private static String log;
-
 
     private Master masterbot;
+
     private JPanel mainPanel;
     private JTextField commandTextField1;
     private JButton sendButton;
-    private JRadioButton connectiontestRadioButton;
-    private JRadioButton runJarFileRadioButton;
-    private JRadioButton downloadFileFromUrlRadioButton;
-    private JRadioButton userCommandRadioButton;
     private JRadioButton encryptionRadioButton;
     private JTextArea logTextArea1;
     private JPanel logPanel;
     private JPanel buttonPanel;
     private JPanel graphpanel;
     private JScrollPane logScrollPane;
-    private JRadioButton killBotRadioButton;
     private JCheckBox cleanchatCheckBox;
+    private JButton connectionTestButton;
+    private JButton runJarFileButton;
+    private JButton downloadFileFromUrlButton;
+    private JButton killBotButton;
+    private JButton helpButton;
 
     public Gui() throws Exception {
         setNickAndLogin(getRandomNumber());
         masterbot = new Master(server, nick, login, channel);
         masterbot.connectToIRC();
         logTextArea1.setEditable(false);
+        JScrollBar vertical = logScrollPane.getVerticalScrollBar();
         cleanchatCheckBox.setSelected(false);
-        encryptionRadioButton.setToolTipText("Janusz weź się w końcu za to");
         Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,6 +48,7 @@ public class Gui {
                     String line = masterbot.receiveMessageForMastergui(cleanchatCheckBox.isSelected());
                     if (!(line.isEmpty())) {
                         logTextArea1.append(line + "\n");
+                        vertical.setValue(vertical.getMaximum());
                     }
                 } catch (Exception exc) {
                 }
@@ -62,7 +62,6 @@ public class Gui {
                 command = commandTextField1.getText();
                 commandTextField1.setText(command);
                 logTextArea1.append(command + "\n");
-                JScrollBar vertical = logScrollPane.getVerticalScrollBar();
                 vertical.setValue(vertical.getMaximum());
                 try {
                     masterbot.sendMessage(command);
@@ -70,41 +69,58 @@ public class Gui {
                 }
             }
         });
-        connectiontestRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                commandTextField1.setText("TESTINOUT");
-            }
-        });
-        runJarFileRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                commandTextField1.setText("RUNJAR");
-            }
-        });
-        downloadFileFromUrlRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                commandTextField1.setText("DOWNLADFILE");
-            }
-        });
-        userCommandRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                commandTextField1.setText(null);
-            }
-        });
-        killBotRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) { commandTextField1.setText("DIE"); }
-        });
-
         commandTextField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 if(e.getKeyCode() == KeyEvent.VK_ENTER)
                     sendButton.doClick();
+            }
+        });
+        connectionTestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commandTextField1.setText("PING");
+            }
+        });
+        runJarFileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commandTextField1.setText("RUNJAR");
+                RunJarFileGui dialog = new RunJarFileGui();
+                dialog.setTitle("Run Jar File");
+                dialog.setSize(600, 150);
+                dialog.setLocationByPlatform(true);
+                dialog.setVisible(true);
+                commandTextField1.setText("RUNJAR " + dialog.getJarfilepath());
+            }
+        });
+        downloadFileFromUrlButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commandTextField1.setText("DOWNLOADFILE");
+                DownloadFileFromUrlGui dialog = new DownloadFileFromUrlGui();
+                dialog.setTitle("Download File");
+                dialog.setSize(600, 200);
+                dialog.setLocationByPlatform(true);
+                dialog.setVisible(true);
+                commandTextField1.setText("DOWNLOADFILE " + dialog.getFilepath() + " " + dialog.getUrl());
+            }
+        });
+        killBotButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commandTextField1.setText("DIE");
+            }
+        });
+        helpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HelpGui dialog = new HelpGui();
+                dialog.setTitle("Help");
+                dialog.setSize(600, 200);
+                dialog.setLocationByPlatform(true);
+                dialog.setVisible(true);
             }
         });
     }
@@ -123,7 +139,7 @@ public class Gui {
 
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("Gui");
-        frame.setSize(800, 400);
+        frame.setSize(800, 500);
         frame.setLocationByPlatform(true);
         frame.setTitle("BotNetIRC - Master");
         frame.setContentPane(new Gui().mainPanel);
