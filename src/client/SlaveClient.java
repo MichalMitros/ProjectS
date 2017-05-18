@@ -10,8 +10,8 @@ import java.util.Random;
 
 public class SlaveClient {
     private static String server = "irc.kubehe.me";
-    private static String nick = "bot";
-    private static String login = "bot";
+    private static String nick;
+    private static String login;
 
     private static String channel = "#channel";
 
@@ -25,6 +25,7 @@ public class SlaveClient {
         {
             try
             {
+                nick = login = "bot";
                 setNickAndLogin(getRandomNumber(), getSystemName());
                 bot1 = new Bot(server, nick, login, channel);
 
