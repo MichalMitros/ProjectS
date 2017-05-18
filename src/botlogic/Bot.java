@@ -20,7 +20,7 @@ public class Bot {
 
     private String channel;
 
-    private Socket socket;
+    private static Socket socket;
 
     private static BufferedReader reader;
     private static BufferedWriter writer;
@@ -38,7 +38,7 @@ public class Bot {
         this.channel = ch;
     }
 
-    public void closeConnection()
+    public static void closeConnection()
     {
         try
         {
