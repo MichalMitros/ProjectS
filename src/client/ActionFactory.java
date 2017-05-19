@@ -1,5 +1,7 @@
 package client;
 
+import static botlogic.Bot.closeConnection;
+
 /**
  * Created by kubehe on 30-04-2017.
  */
@@ -35,6 +37,7 @@ public class ActionFactory {
         }
         else if(commandWithArgs[0].equalsIgnoreCase("DIE"))
         {
+            closeConnection();
             System.exit(0);
         }
         return null;
