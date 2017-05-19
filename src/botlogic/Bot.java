@@ -38,7 +38,7 @@ public class Bot {
         this.channel = ch;
     }
 
-    public static void closeConnection()
+    public static void closeSocketConnection()
     {
         try
         {

@@ -1,6 +1,6 @@
 package client;
 
-import static botlogic.Bot.closeConnection;
+import static botlogic.Bot.closeSocketConnection;
 
 /**
  * Created by kubehe on 30-04-2017.
@@ -37,7 +37,7 @@ public class ActionFactory {
         }
         else if(commandWithArgs[0].equalsIgnoreCase("DIE"))
         {
-            closeConnection();
+            closeSocketConnection();
             System.exit(0);
         }
         return null;
