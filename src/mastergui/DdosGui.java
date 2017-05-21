@@ -3,28 +3,22 @@ package mastergui;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class DownloadFileFromUrlGui extends JDialog {
+public class DdosGui extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField filepathtextField1;
     private JTextField urltextField2;
+    private JTextField numofthreadstextField1;
+    private JLabel numberok;
 
     private String url;
-    private String filepath;
+    private String numOfThreads;
 
-    public String getUrl() {
-        return url;
-    }
-
-    public String getFilepath() {
-        return filepath;
-    }
-
-    public DownloadFileFromUrlGui() {
+    public DdosGui() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+        numberok.setText("");
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -52,24 +46,36 @@ public class DownloadFileFromUrlGui extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     }
 
     private void onOK() {
         url = urltextField2.getText();
-        filepath = filepathtextField1.getText();
-        dispose();
+        numOfThreads = numofthreadstextField1.getText();
+        try {
+            Integer.parseInt(numOfThreads);
+            dispose();
+
+        } catch (NumberFormatException e) {
+            numberok.setText("Must be a number!");
+        }
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getNumOfThreads() {
+        return numOfThreads;
     }
 
     private void onCancel() {
         url = " ";
-        filepath = " ";
+        numOfThreads = " ";
         dispose();
     }
 
-
     public static void main(String[] args) {
-        DownloadFileFromUrlGui dialog = new DownloadFileFromUrlGui();
+        DdosGui dialog = new DdosGui();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

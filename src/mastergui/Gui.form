@@ -80,7 +80,7 @@
           </component>
         </children>
       </grid>
-      <grid id="a3ee1" binding="buttonPanel" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="a3ee1" binding="buttonPanel" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="5" left="5" bottom="5" right="5"/>
         <constraints>
           <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -94,27 +94,17 @@
         <children>
           <component id="89c37" class="javax.swing.JButton" binding="killBotButton">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="192" height="32"/>
               </grid>
             </constraints>
             <properties>
-              <text value="Kill bot"/>
-            </properties>
-          </component>
-          <component id="92ca2" class="javax.swing.JButton" binding="downloadFileFromUrlButton">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="192" height="32"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Download File from Url"/>
+              <text value="Kill all bots"/>
             </properties>
           </component>
           <component id="51ca5" class="javax.swing.JButton" binding="runJarFileButton">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="192" height="32"/>
               </grid>
             </constraints>
@@ -122,9 +112,27 @@
               <text value="Run Jar File"/>
             </properties>
           </component>
+          <component id="9fbed" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Action"/>
+            </properties>
+          </component>
+          <component id="71f80" class="javax.swing.JButton" binding="ddosButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="DDOS"/>
+            </properties>
+          </component>
           <component id="6ac1" class="javax.swing.JButton" binding="connectionTestButton">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="192" height="32"/>
               </grid>
             </constraints>
@@ -132,19 +140,19 @@
               <text value="Connection test"/>
             </properties>
           </component>
-          <component id="9fbed" class="javax.swing.JLabel">
+          <component id="92ca2" class="javax.swing.JButton" binding="downloadFileFromUrlButton">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="192" height="16"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="192" height="32"/>
               </grid>
             </constraints>
             <properties>
-              <text value="Action"/>
+              <text value="Download File from Url"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="99a7b" binding="graphpanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="99a7b" binding="graphpanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="5" left="5" bottom="5" right="5"/>
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -160,16 +168,16 @@
               <text value="Encryption"/>
             </properties>
           </component>
-          <component id="8e773" class="javax.swing.JButton" binding="helpButton" default-binding="true">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Help"/>
-            </properties>
-          </component>
         </children>
       </grid>
+      <component id="8e773" class="javax.swing.JButton" binding="helpButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Help"/>
+        </properties>
+      </component>
     </children>
   </grid>
   <buttonGroups>
