@@ -53,8 +53,8 @@ public class DDOSURLAction implements Action {
 	
 	public void stopAttack() {
 		if(attackers != null) {
-			for(UrlAttacker a: attackers) {
-				a.stopRunning();
+			for(int i=0; i<attackers.length; i++) {
+				attackers[i].stopRunning();
 			}
 			attackers = null;
 		}
