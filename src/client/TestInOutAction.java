@@ -26,23 +26,14 @@ public class TestInOutAction implements Action {
 	public String getInfo()
 	{
 		if (pingReceived)
-			return " pong od ";
+			return " pong ";
 		else
 			return " no ping received!?!?";
 	}
 
 	private void testInOut() throws Exception
 	{
-		//String line;
-
-		//while ((line = receiveMessage()) != null  )
-		//{
-			//if (line.contains("ping"))
-			//{
-				pingReceived = true;
-				//break;
-			//}
-		//}
+        pingReceived = true;
 	}
 
 
