@@ -33,16 +33,16 @@ public class TestInOutAction implements Action {
 
 	private void testInOut() throws Exception
 	{
-		String line;
+		//String line;
 
-		while ((line = receiveMessage()) != null  )
-		{
-			if (line.contains("ping"))
-			{
+		//while ((line = receiveMessage()) != null  )
+		//{
+			//if (line.contains("ping"))
+			//{
 				pingReceived = true;
-				break;
-			}
-		}
+				//break;
+			//}
+		//}
 	}
 
 

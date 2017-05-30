@@ -52,8 +52,11 @@ public class DdosGui extends JDialog {
         url = urltextField2.getText();
         numOfThreads = numofthreadstextField1.getText();
         try {
-            Integer.parseInt(numOfThreads);
-            dispose();
+            if (Integer.parseInt(numOfThreads) > 0) {
+                dispose();
+            } else {
+                numberok.setText("Must be bigger than 0");
+            }
 
         } catch (NumberFormatException e) {
             numberok.setText("Must be a number!");

