@@ -125,7 +125,7 @@ public class Gui {
             public void actionPerformed(ActionEvent e) {
                 HelpGui dialog = new HelpGui();
                 dialog.setTitle("Help");
-                dialog.setSize(600, 200);
+                dialog.pack();
                 dialog.setLocationByPlatform(true);
                 dialog.setVisible(true);
             }
